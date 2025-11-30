@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEAKOLOGY - Premium Steak House</title>
+    <link rel="stylesheet" href="style.css">
+    
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <h1>🥩 STEAKOLOGY</h1>
+                    <p class="tagline">Premium Steak Experience</p>
+                </div>
+
+                    <nav class="desktop-nav">
+                        <button class="nav-btn active" data-page="home">HOME</button>
+                        <button class="nav-btn" data-page="menu">MENU</button>
+                        <button class="nav-btn" data-page="about">ABOUT</button>
+                        <button id="cartBtn" class="cart-btn">
+                            🛒 <span id="cartCount">0</span>
+                        </button>
+                    </nav>
+                    
+                    <button id="menuToggle" class="menu-toggle">☰</button>
+                </div>
+
+            <nav class="mobile-nav" id="mobileNav">
+                <button class="nav-btn" data-page="home">HOME</button>
+                <button class="nav-btn" data-page="menu">MENU</button>
+                <button class="nav-btn" data-page="about">ABOUT</button>
+                <button id="cartBtn" class="cart-btn">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+            </nav>
+        </header>
+
+
+
+        <!-- Cart Sidebar -->
+        <div id="cartSidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h2>ORDER SUMMARY</h2>
+                <button onclick="closeCart()" class="close-btn">✕</button>
+            </div>
+            <div id="cartList" class="cart-list"></div>
+            <div class="cart-footer">
+                <div class="total">TOTAL: <span id="totalHarga">Rp 0</span></div>
+                <button class="checkout-btn">CHECKOUT</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <!-- HOME PAGE -->
+            <div id="home" class="page active">
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1>AUTHENTIC STEAK EXPERIENCE</h1>
+                        <p>Premium quality, affordable price</p>
+                        <button onclick="changePage('menu')" class="btn-cta">EXPLORE MENU</button>
+                    </div>
+                </section>
+
+                <section class="featured">
+                    <h2>SIGNATURE DISHES</h2>
+                    <div class="featured-grid">
+                        <div class="featured-card">
+                            <div class="feature-icon">
+                                <img src="primecuts.avif">
+                            </div>
+                            <h3>Prime Cuts</h3>
+                            <p>Pilihan daging premium grade A terbaik</p>
+                        </div>
+                        <div class="featured-card">
+                            <div class="feature-icon">
+                                <img src="searing2.jpg">
+                            </div>
+                            <h3>Perfect Searing</h3>
+                            <p>Dipanggang dengan presisi sempurna</p>
+                        </div>
+                        <div class="featured-card">
+                            <div class="feature-icon">
+                                <img src="drink.jpg">
+                            </div>
+                            <h3>Drink Pairing</h3>
+                            <p>Pilihan minuman premium untuk pengalaman terbaik</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- MENU PAGE -->
+            <div id="menu" class="page">
+                <div class="menu-header">
+                    <h1>SEE OUR MENUS</h1>
+                    <p>Carefully curated selection of premium steaks and complementary dishes</p>
+                </div>
+                <div id="menuContainer" class="menu-grid"></div>
+            </div>
+
+            <!-- ABOUT PAGE -->
+            <div id="about" class="page">
+                <div class="about-wrapper">
+                    <h1>ABOUT STEAKOLOGY</h1>
+
+                    <section class="about-section">
+                        <h2>Our Story</h2>
+                        <p>Steakology adalah tempat di mana seni memanggang bertemu dengan cita rasa premium. 
+                            Kami hadir sebagai destinasi terbaik bagi para pecinta steak yang menginginkan 
+                            pengalaman makan berkelas tanpa harus membayar mahal.</p>
+                        <p>Setiap potongan daging dipilih secara khusus dari supplier terpercaya, kemudian 
+                            diolah oleh chef profesional menggunakan perpaduan teknik klasik dan modern. 
+                            Hasilnya? Steak juicy, lembut, dan penuh aroma yang siap memanjakan lidah 
+                            Anda di setiap gigitan.</p>
+                    </section>
+
+                    <section class="about-section">
+                        <h2>Contact Information</h2>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Jl. Fatmawati No. 123, Jakarta Selatan</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+62 856 0335 5244</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@steakology.com</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="about-section">
+                        <h2>Operating Hours</h2>
+                        <div class="hours">
+                            <p><strong>Monday - Friday:</strong> 11:00 - 23:00</p>
+                            <p><strong>Saturday:</strong> 10:00 - 00:00</p>
+                            <p><strong>Sunday:</strong> 10:00 - 23:00</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>STEAKOLOGY</h3>
+                    <p>Premium Steak Experience untuk semua</p>
+                </div>
+                <div class="footer-section">
+                    <h3>QUICK LINKS</h3>
+                    <ul>
+                        <li><button onclick="changePage('home')">Home</button></li>
+                        <li><button onclick="changePage('menu')">Menu</button></li>
+                        <li><button onclick="changePage('about')">About</button></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>FOLLOW US</h3>
+                    <p>
+                        <a href="https://www.instagram.com/syahlaamaliaa_/" target="_blank" style="color: darkgoldenrod;">Instagram</a> |
+                        Facebook | Twitter
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 STEAKOLOGY. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
